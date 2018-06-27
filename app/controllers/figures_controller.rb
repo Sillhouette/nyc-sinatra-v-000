@@ -13,7 +13,6 @@ class FiguresController < ApplicationController
     @figure = Figure.create(:name => params[:figure][:name])
     @figure.title_ids = params[:figure][:title_ids]
     @figure.landmark_ids = params[:figure][:landmark_ids]
-    binding.pry
     if params[:landmark][:name] != ""
       @figure.landmarkz << Landmark.find_or_create_by(params[:landmark])
     end
